@@ -18,8 +18,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    // TanStack Start SSR plugin — handles routing, server functions, entry
-    tanstackStart(),
+    // TanStack Start SSR plugin — configured for Vercel deployment
+    tanstackStart({
+      server: {
+        preset: "vercel",
+      },
+    }),
 
     // Tailwind v4 — must come before react to process CSS first
     tailwindcss(),
