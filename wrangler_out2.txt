@@ -1,0 +1,57 @@
+
+ ⛅️ wrangler 4.82.2 (update available 4.87.0)
+─────────────────────────────────────────────
+Using redirected Wrangler configuration.
+ - Configuration being used: "dist\tanstack_start_app\wrangler.json"
+ - Original user's configuration: "<no user config found>"
+ - Deploy configuration file: ".wrangler\deploy\config.json"
+Using secrets defined in .env
+Your Worker has access to the following bindings:
+Binding                             Resource                  Mode
+env.VITE_API_URL ("(hidden)")       Environment Variable      local
+env.VITE_USE_MOCK ("(hidden)")      Environment Variable      local
+
+Attaching additional modules:
+┌───────────────────────────────────────────────────────┬──────┬─────────────┐
+│ Name                                                  │ Type │ Size        │
+├───────────────────────────────────────────────────────┼──────┼─────────────┤
+│ assets/router-F80X6evQ.js                             │ esm  │ 1264.64 KiB │
+├───────────────────────────────────────────────────────┼──────┼─────────────┤
+│ assets/start-HYkvq4Ni.js                              │ esm  │ 0.06 KiB    │
+├───────────────────────────────────────────────────────┼──────┼─────────────┤
+│ assets/_tanstack-start-manifest_v-DY_kG-Lr.js         │ esm  │ 716.13 KiB  │
+├───────────────────────────────────────────────────────┼──────┼─────────────┤
+│ assets/__23tanstack-start-plugin-adapters-Cwee5PKy.js │ esm  │ 0.13 KiB    │
+├───────────────────────────────────────────────────────┼──────┼─────────────┤
+│ Total (4 modules)                                     │      │ 1980.96 KiB │
+└───────────────────────────────────────────────────────┴──────┴─────────────┘
+⎔ Starting local server...
+[wrangler:info] Ready on http://127.0.0.1:8789
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
+⎔ Reloading local server...
+⎔ Local server updated and ready
