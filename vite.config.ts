@@ -18,8 +18,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    tanstackStart(),
     tailwindcss(),
+    tanstackStart(),
 
     // React fast-refresh
     react(),
