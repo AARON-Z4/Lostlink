@@ -28,13 +28,13 @@ app.use(
 
 // ─── Rate Limiting ─────────────────────────────────────────────────────────
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 500, // Increased for testing
+  windowMs: 1 * 60 * 1000, // 1 minute
+  max: 10000, // Effectively disabled for testing
   message: { error: 'Too many requests, please try again later.' },
 });
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 50, // Increased for testing
+  windowMs: 1 * 60 * 1000,
+  max: 10000, // Effectively disabled for testing
   message: { error: 'Too many auth attempts, please try again later.' },
 });
 
