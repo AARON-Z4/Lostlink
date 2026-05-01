@@ -11,6 +11,7 @@
  *  4. tsconfigPaths  – @/ alias resolution
  */
 import { defineConfig } from "vite";
+import { cloudflare } from "@cloudflare/vite-plugin";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
@@ -18,7 +19,10 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    // TanStack Start SSR plugin — Vercel preset is in app.config.ts
+    // Cloudflare integration
+    cloudflare(),
+
+    // TanStack Start SSR plugin
     tanstackStart(),
 
     // Tailwind v4 — must come before react to process CSS first
