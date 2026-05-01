@@ -9,9 +9,22 @@
  *  - Data state is seeded from mock for offline dev; replaced by React Query in live mode
  */
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import type { Item, Claim, Notification, User, ItemStatus, ClaimStatus } from "./types";
 import { authService } from "@/services/auth.service";
+
+const safeStorage = {
+  getItem: (name: string) => {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem(name);
+  },
+  setItem: (name: string, value: string) => {
+    if (typeof window !== "undefined") localStorage.setItem(name, value);
+  },
+  removeItem: (name: string) => {
+    if (typeof window !== "undefined") localStorage.removeItem(name);
+  },
+};
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === "true";
 
@@ -85,7 +98,10 @@ export const useAuth = create<AuthState>()(
         }
       },
     }),
-    { name: "lostlink-auth-v2" },
+    { 
+      name: "lostlink-auth-v2",
+      storage: createJSONStorage(() => safeStorage),
+    },
   ),
 );
 
@@ -178,7 +194,10 @@ export const useData = create<DataState>()(
       markAllRead: () =>
         set({ notifications: get().notifications.map((n) => ({ ...n, read: true })) }),
     }),
-    { name: "lostlink-data-v2" },
+    { 
+      name: "lostlink-data-v2",
+      storage: createJSONStorage(() => safeStorage),
+    },
   ),
 );
 
