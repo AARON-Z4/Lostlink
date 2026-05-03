@@ -27,9 +27,9 @@ const loginValidator = [
 const itemValidator = [
   body('title').trim().notEmpty().withMessage('Title is required'),
   body('category').trim().notEmpty().withMessage('Category is required'),
-  body('type').isIn(['lost', 'found']).withMessage('Type must be lost or found'),
+  body('type').optional().isIn(['lost', 'found']).withMessage('Type must be lost or found'),
   body('location').trim().notEmpty().withMessage('Location is required'),
-  body('date').isDate().withMessage('Valid date required'),
+  body('date').isISO8601().withMessage('Valid date required (ISO8601)'),
   validate,
 ];
 
