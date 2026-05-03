@@ -30,6 +30,7 @@ export function extractApiError(error: unknown): ApiError {
       message:
         (typeof data?.error === "string" ? data.error : null) ??
         (typeof data?.message === "string" ? data.message : null) ??
+        (Array.isArray(data?.errors) && data.errors[0]?.msg ? data.errors[0].msg : null) ??
         error.message ??
         "An unexpected error occurred.",
       errors: data?.errors,
