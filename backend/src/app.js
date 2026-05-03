@@ -16,6 +16,9 @@ const uploadRoutes = require('./routes/upload.routes');
 
 const app = express();
 
+// Enable 'trust proxy' for Render/Proxies
+app.set('trust proxy', 1);
+
 // ─── Security Middleware ───────────────────────────────────────────────────
 app.use(helmet());
 app.use(
@@ -53,6 +56,10 @@ if (process.env.NODE_ENV !== 'test') {
 // ─── Health Check ──────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString(), service: 'LostLink API' });
+});
+
+app.get('/', (req, res) => {
+  res.send('Welcome to the LostLink API. Use /health for status.');
 });
 
 // ─── API Routes ────────────────────────────────────────────────────────────
