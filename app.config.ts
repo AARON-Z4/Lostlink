@@ -1,7 +1,10 @@
-import { defineConfig } from '@tanstack/react-start/config';
 
-export default defineConfig({
+/**
+ * app.config.ts
+ * Minimal config for Vinxi/TanStack Start
+ */
+export default {
   server: {
     preset: 'node-server',
   },
-});
+};

@@ -12,6 +12,7 @@ const claimsRoutes = require('./routes/claims.routes');
 const qrRoutes = require('./routes/qr.routes');
 const notificationsRoutes = require('./routes/notifications.routes');
 const adminRoutes = require('./routes/admin.routes');
+const uploadRoutes = require('./routes/upload.routes');
 
 const app = express();
 
@@ -61,6 +62,7 @@ app.use('/claims', claimsRoutes);
 app.use('/qr', qrRoutes);
 app.use('/notifications', notificationsRoutes);
 app.use('/admin', adminRoutes);
+app.use('/upload', uploadRoutes);
 
 // ─── 404 Handler ───────────────────────────────────────────────────────────
 app.use((req, res) => {

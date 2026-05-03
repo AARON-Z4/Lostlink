@@ -1,0 +1,1 @@
+import{c as i}from"./index-DW9XFzhn.js";function a(){const{user:e,token:t,login:r,register:s,logout:o,refreshUser:u}=i();return{user:e,token:t,login:r,register:s,logout:o,refreshUser:u,isAuthenticated:!!e&&!!t,isAdmin:e?.role==="admin"}}export{a as u};
